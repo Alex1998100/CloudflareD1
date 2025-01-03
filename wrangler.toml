@@ -1,0 +1,9 @@
+name = "uploaddatabase"
+main = "./src/index.js" 
+account_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+compatibility_date = "2024-11-11"
+compatibility_flags = [ "nodejs_compat" ]
+[[d1_databases]]
+binding = "MY_TOPIC"
+database_name = "topic"
+database_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
