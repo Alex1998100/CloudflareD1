@@ -7,3 +7,7 @@ compatibility_flags = [ "nodejs_compat" ]
 binding = "MY_TOPIC"
 database_name = "topic"
 database_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+[[kv_namespaces]]
+binding = "cache_dev"
+id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+preview_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx

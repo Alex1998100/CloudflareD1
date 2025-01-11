@@ -3,16 +3,7 @@
 //https://workers-qb.massadas.com/databases/cloudflare-d1/
 //https://developers.cloudflare.com/d1/tutorials/import-to-d1-with-rest-api/
 
-async function getDataPortion(env) {
-    let csvData = await env.cache_dev.get("dataPart")
-    const rawData = { entries: csvData.trim().split('\n').map(row => {
-        const [i, name, id, parent, type] = row.split(',');
-        return { i, name, id, parent, type };
-      })
-    };
-    return rawData.entries.map(x => ({...x, i: x.i - 1240})).sort((a, b) => a.i - b.i);
-}
-
+import { data } from "./entryPart.js"
 
 async function uploadData(env, data, endID) {
     //Slicing the Array: data.slice is used to reduce the work done, including only the records after the endID record.
@@ -48,8 +39,6 @@ export default {
                 return new Response("No ID specified", { status: 400 });
             }
             try {
-                const data = await getDataPortion(env);
-                console.log(data)
                 await uploadData(env, data, endID);
                 return new Response("ok");
             } catch (error) {
